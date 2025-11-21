@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Upload, Send, FileText, X, Loader2, MessageSquare, AlertCircle, Sun, Moon } from 'lucide-react';
+import.meta.env.VITE_OPENAI_API_KEY
 
 export default function App() {
   const [messages, setMessages] = useState([
@@ -15,7 +16,7 @@ export default function App() {
   const chatEndRef = useRef(null);
 
   // API Key
-  const apiKey = "AIzaSyAuBh9XTTCcDF4w9EMQIs7nWODghh_dt-o"; 
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
   const scrollToBottom = () => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
